@@ -59,7 +59,7 @@ export default function SearchFilters({ launches }: Props) {
         />
 
         <select
-          className="border rounded px-3 py-2 w-full md:w-48"
+          className="border bg-white text-gray-900 rounded px-3 py-2 w-full md:w-48"
           value={status}
           onChange={(e) => updateParam("status", e.target.value)}
         >
@@ -72,7 +72,7 @@ export default function SearchFilters({ launches }: Props) {
         </select>
 
         <select
-          className="border rounded px-3 py-2 w-full md:w-48"
+          className="border bg-white text-gray-900 rounded px-3 py-2 w-full md:w-48"
           value={provider}
           onChange={(e) => updateParam("provider", e.target.value)}
         >
