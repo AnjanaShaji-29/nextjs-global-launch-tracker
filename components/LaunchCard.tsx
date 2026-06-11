@@ -2,14 +2,16 @@ import Link from "next/link";
 import { Launch } from "@/types/launch";
 import StatusBadge from "./StatusBadge";
 import { formatDate } from "@/utils/helper";
+import { useSearchParams } from "next/navigation";
 
 type Props = {
   launch: Launch;
 };
 
 export default function LaunchCard({ launch }: Props) {
+  const searchParams = useSearchParams();
   return (
-    <Link href={`/launches/${launch.id}`}>
+    <Link href={`/launches/${launch.id}?${searchParams.toString()}`}>
       <div className="rounded-lg border p-4 hover:shadow-lg">
         <div className="flex items-start justify-between">
           <h2 className="font-bold text-lg">{launch.name}</h2>
