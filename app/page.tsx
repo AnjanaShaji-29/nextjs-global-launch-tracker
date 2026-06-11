@@ -1,8 +1,12 @@
+import { getLaunches } from "@/lib/api";
+import LaunchList from "@/components/LaunchList";
 
-export default function Home() {
+export default async function Home() {
+  const data = await getLaunches();
+
   return (
-    <div>
-      Welcome to Global Launch Tacker!
-    </div>
+    <main className="container mx-auto p-4">
+      <LaunchList launches={data.results} />
+    </main>
   );
 }
